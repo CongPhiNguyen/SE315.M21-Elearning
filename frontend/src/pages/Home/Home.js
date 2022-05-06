@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 //import { Tabs } from "antd";
 import { Skeleton } from "antd";
-import "./Home.css";
+//import "./Home.css";
 import CourseCard from "../../components/CourseCard/CourseCard";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +31,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
+import Placeholder from "react-bootstrap/Placeholder";
 //
 
 const Home = () => {
@@ -148,7 +148,9 @@ const Home = () => {
                 <Container fluid className="my-4" ref={popularref}>
                     <h2>Khóa học phổ biến </h2>
                     {loadingpobular ? (
-                        <Skeleton />
+                        <Placeholder as="p" animation="glow">
+                            <Placeholder xs={12} />
+                        </Placeholder>
                     ) : errorpobular ? (
                         <Error error={errorpobular} />
                     ) : coursespobular.length === 0 ? (
@@ -452,7 +454,9 @@ const Home = () => {
                         <Tab eventKey="1" title="Lập trình" className="mx-2">
                             <Container fluid>
                                 {loading ? (
-                                    <Skeleton />
+                                    <Placeholder as="p" animation="glow">
+                                        <Placeholder xs={12} />
+                                    </Placeholder>
                                 ) : error ? (
                                     <Error error={error} />
                                 ) : courses.length === 0 ? (

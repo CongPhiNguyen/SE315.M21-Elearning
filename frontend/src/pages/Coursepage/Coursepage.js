@@ -23,6 +23,10 @@ import {
 } from "../../components/utils/notification/Notification";
 import { CREATE_REVIEW_RESET } from "../../redux/constants/courseconstants";
 
+// custom
+import Placeholder from "react-bootstrap/Placeholder";
+//
+
 const Coursepage = ({ match, history }) => {
   const [comment, setcomment] = useState("");
   const [rating, setrating] = useState(3);
@@ -101,6 +105,9 @@ const Coursepage = ({ match, history }) => {
         <Error error={error || errorstudent} />
       ) : (
         <div className="coursePage">
+          <Placeholder as="p"  animation="glow">
+            <Placeholder md={6}></Placeholder>
+          </Placeholder>
           <div>
             <div className="descriptionPart">
               <div className="descriptionPartText">
